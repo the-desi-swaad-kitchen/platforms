@@ -176,7 +176,45 @@
       background: #ffe7a3;
       transform: translateY(-2px);
     }
+
+    .offer {
+      background: #ff7043;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 15px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 112, 67, 0.5);
+      }
+
+      70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 10px rgba(255, 112, 67, 0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQS4LQW2BZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VQS4LQW2BZ');
+  </script>
 </head>
 
 <body>
@@ -194,31 +232,38 @@
       Choose where you'd like to order from
     </div>
 
+    <div class="offer">
+      🔥 Order Direct on WhatsApp & Get Flat 10% OFF
+    </div>
+
     <a class="btn zomato" href="https://www.zomato.com/bangalore/the-desi-swaad-kitchen-btm-bangalore/order"
-      target="_blank">
+      target="_blank" onclick="gtag('event','click',{event_category:'order',event_label:'zomato'});">
       <img src="images/Zomato.webp">
       Order on Zomato
     </a>
 
     <a class="btn swiggy" href="https://www.swiggy.com/city/bangalore/the-desi-swaad-kitchen-btm-rest1315758"
-      target="_blank">
+      target="_blank" onclick="gtag('event','click',{event_category:'order',event_label:'swiggy'});">
       <img src="images/Swiggy.webp">
       Order on Swiggy
     </a>
 
-    <a class="btn direct" href="https://wa.me/919380971030" target="_blank">
+    <a class="btn direct" href="https://wa.me/919380971030" target="_blank"
+      onclick="gtag('event','click',{event_category:'order',event_label:'whatsapp'});">
       <img src="images/whatsapp.webp">
       Order Directly
     </a>
 
-    <a class="btn maps" href="https://share.google/yWmUyBi2zKxKLqXX1" target="_blank">
+    <a class="btn maps" href="https://share.google/yWmUyBi2zKxKLqXX1" target="_blank"
+      onclick="gtag('event','click',{event_category:'location',event_label:'maps'});">
       <img src="images/maps.webp">
       Find us on Google Maps
     </a>
 
     <footer>
 
-      <a class="phone" href="tel:+919380971030">
+      <a class="phone" href="tel:+919380971030"
+        onclick="gtag('event','click',{event_category:'contact',event_label:'phone'});">
         📞 Call us: 93809 71030
       </a>
 
